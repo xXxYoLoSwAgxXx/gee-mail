@@ -1,52 +1,49 @@
-
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<script src="js/mail-generator.js"></script>
+		<meta charset="UTF-8">
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		
     <script>
       window.onload = function(){
+      	window.geemails.map(function(currentValue, index){
+/*      		console.log(currentValue);
+      		console.log(index);*/
+      		var msg = $("<div class="one"></div>");
+      		msg.append($("<div>${geemails.date}</div>"));
+      		var msg = $(`
+      			<div class ="">
+      				<div id="date">${geemails.date}</div>
+      				<div id="sender">${geemails.sender}</div>
+      				<div id="subject">${geemails.subject}</div>
+      			</div">
+      			`)
+      	});
       };
-      access data
-      onclick 
-      count
-      setInterval
+    
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
 			<h1>
-				NOT GMAIL
-			</h1>
-			<div class = "mail">
-			<div class = "mailHead">
-				Your Mail
-			</div>
-			<div>	
-				<p id = "date">
-					Date,
-				<p id = "sender">	
-					Sender,
-				<p id = "subject">
-					Subject,
-				</p>
-				</p>
-				<p id = "a">
-					Feb 6, Vic Lee, Here is your DevLeague Coding Challenge
-				</p>
-                <p id = "b">
-					Feb 7, Muhammad, Fiverr "code gmail for me" purchase confirmed
-				</p>	
-				<p id = "c">
-					Feb 9, Muhammed me 2, Thank you so much! Best project ever!
-				</p>
-				<p id = "d">
-					Feb 12, Greg, Equestria action figure order confirmed
-				</p>
-				<p id = "e">
-					Feb 13, God, Congrats on the project you can now take my spot
-				</p>				
-			</div>	
+	NOT GMAIL
+</h1>
+<div class = "mail">
+<div class = "mailHead">
+	Your Mail
+</div>
+<div>	
+		
+</div>	
+</div> 
+	
+
+			<div id="">
+
 			</div>
 		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/mail-generator.js"></script>
+	<script src="js/app.js"></script>
 </html>
