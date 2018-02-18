@@ -7,41 +7,43 @@
     <script>
       window.onload = function(){
       	window.geemails.map(function(currentValue, index){
-/*      		console.log(currentValue);
-      		console.log(index);*/
-      		var msg = $("<div class="one"></div>");
-      		msg.append($("<div>${geemails.date}</div>"));
-      		var msg = $(`
-      			<div class ="">
-      				<div id="date">${geemails.date}</div>
-      				<div id="sender">${geemails.sender}</div>
-      				<div id="subject">${geemails.subject}</div>
-      			</div">
-      			`)
+      		//console.log(currentValue);
+      		//console.log(index);
+      		var msg = $(
+      			`<div class='message'>
+	      			<div id="date">${currentValue.date}</div>
+	      			<div id="sender">${currentValue.sender}</div>
+	      			<div id="subject">${currentValue.subject}</div>
+	      			<div id="body">${currentValue.body}</div>
+      			</div>`);
+      		$('.mail').append(msg);
+      		$('.mail').append(`<br>`);
       	});
+      	$( ".message" ).click(function() {
+      		$(".message").map((currVal, index) => {
+      			index.lastElementChild.style.display = "none";
+      		})
+      		this.lastElementChild.style.display = "block";
+
+				});
+
+				$("#inboxCount")[0].innerText = $(".message").length;
       };
-    
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
 			<h1>
-	NOT GMAIL
-</h1>
-<div class = "mail">
-<div class = "mailHead">
-	Your Mail
-</div>
-<div>	
-		
-</div>	
-</div> 
-	
+				NOT GMAIL
+			</h1>
 
-			<div id="">
+			<div class = "mail">
+				<div class = "mailHead">
+					INBOX <span id="inboxCount"></span>
+				</div>
+			</div>		
 
-			</div>
-		</div>
+		</div> 
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/mail-generator.js"></script>

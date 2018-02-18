@@ -1,14 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Arimo|Roboto);
 
 .mail{
-	height: 450px;
 	width: 500px;
 	background-color: #ff6699;
 	text-align: center;
-	margin-right: 0px;
-	margin-left: 100px;
+	margin-right: auto;
+	margin-left: auto;
 	margin-top: 75px;
-	display: inline-block;
+	display: block;
 	border-radius: 15px;
 
 }
@@ -18,9 +17,9 @@
 	border-width: 2px;
 	background-color: #99ff99;
 	width: 700px;
-	height: 700px;
 	margin-right: auto;
 	margin-left: auto;
+	padding-bottom: 75px;
 	border-radius: 15px;
 
 }
@@ -60,6 +59,10 @@
 	font-family: "sans-serif";
 	font-size: 20px;
 	text-align: center;
+}
+
+#body {
+	display: none;
 }
 
 #a {
