@@ -26,6 +26,16 @@
       		this.lastElementChild.style.display = "block";
 				});
 				$("#inboxCount")[0].innerText = $(".message").length;
+
+        	 var newMess = $(
+        	 	`<div class = 'newBox'>
+					<div id="gen">${currentValue.subject}</div>
+				</div>
+        	 	`);
+        	 $('.newMail').append(newMess);
+ 
+
+
       };
     </script>
 	</head>
@@ -40,7 +50,9 @@
 					INBOX <span id="inboxCount"></span>
 				</div>
 			</div>		
-
+				<div class = "newMail">
+					NEW 
+				</div>
 		</div> 
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
