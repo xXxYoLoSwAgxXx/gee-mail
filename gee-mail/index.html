@@ -3,38 +3,37 @@
 	<head>
 		<meta charset="UTF-8">
 		<link href="css/style.css" rel="stylesheet" media="screen">
-		
+
     <script>
       window.onload = function(){
       	window.geemails.map(function(currentValue, index){
-      		//console.log(currentValue);
-      		//console.log(index);
       		var msg = $(
       			`<div class='message'>
 	      			<div id="date">${currentValue.date}</div>
 	      			<div id="sender">${currentValue.sender}</div>
 	      			<div id="subject">${currentValue.subject}</div>
-	      			<div id="body">${currentValue.body}</div>
-      			</div>`);
+	      			<div id="body" class="hidden">${currentValue.body}</div>
+      			</div>
+						<br>`);
       		$('.mail').append(msg);
-      		$('.mail').append(`<br>`);
       	});
+
       	$( ".message" ).click(function() {
-      		$(".message").map((currVal, index) => {
-      			index.lastElementChild.style.display = "none";
-      		})
-      		this.lastElementChild.style.display = "block";
+					console.log($( ".message" ))
+					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
 				});
 				$("#inboxCount")[0].innerText = $(".message").length;
 
-        	 var newMess = $(
-        	 	`<div class = 'newBox'>
-					<div id="gen">${currentValue.subject}</div>
-				</div>
-        	 	`);
-        	 $('.newMail').append(newMess);
- 
-
+				setInterval(() => {
+					$('.newMail').append(
+						`<div class='message'>
+	      			<div id="date">${window.getNewMessage.date}</div>
+	      			<div id="sender">${window.getNewMessage.sender}</div>
+	      			<div id="subject">${window.getNewMessage.subject}</div>
+	      			<div id="body" class="hidden">${window.getNewMessage.body}</div>
+      			</div>
+						<br>`);
+				}, 2000);
 
       };
     </script>
@@ -49,11 +48,12 @@
 				<div class = "mailHead">
 					INBOX <span id="inboxCount"></span>
 				</div>
-			</div>		
-				<div class = "newMail">
-					NEW 
-				</div>
-		</div> 
+			</div>
+
+			<div class = "newMail">
+				NEW
+			</div>
+		</div>
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/mail-generator.js"></script>
