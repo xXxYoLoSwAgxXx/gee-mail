@@ -6,9 +6,10 @@
 
     <script>
       window.onload = function(){
+
       	window.geemails.map(function(currentValue, index){
       		var msg = $(
-      			`<div class='message'>
+      			`<div class='jon'>
 	      			<div id="date">${currentValue.date}</div>
 	      			<div id="sender">${currentValue.sender}</div>
 	      			<div id="subject">${currentValue.subject}</div>
@@ -17,24 +18,25 @@
 						<br>`);
       		$('.mail').append(msg);
       	});
-
-      	$( ".message" ).click(function() {
-					console.log($( ".message" ))
-					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
-				});
-				$("#inboxCount")[0].innerText = $(".message").length;
-
+				
 				setInterval(() => {
-					$('.newMail').append(
-						`<div class='message'>
+					$("#inboxCount")[0].innerText = $(".jon").length + 1;
+					$('.mail').append(
+						`<div class='jon'>
 	      			<div id="date">${window.getNewMessage.date}</div>
 	      			<div id="sender">${window.getNewMessage.sender}</div>
 	      			<div id="subject">${window.getNewMessage.subject}</div>
-	      			<div id="body" class="visible">${window.getNewMessage.body}</div>
+	      			<div id="body" class="hidden">${window.getNewMessage.body}</div>
       			</div>
 						<br>`);
+
 				}, 5000);
 
+		$("#inboxCount")[0].innerText = $(".jon").length;
+				$( ".jon" ).click(function() {
+					console.log($( ".jon" ))
+					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
+				});
       };
     </script>
 	</head>
@@ -43,16 +45,13 @@
 			<h1>
 				GEE-MAIL
 			</h1>
-
+			<div class = "wrap">
 			<div class = "mail">
 				<div class = "mailHead">
 					INBOX <span id="inboxCount"></span>
 				</div>
 			</div>
-
-			<div class = "newMail">
-				NEW
-			</div>
+						</div>
 		</div>
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
