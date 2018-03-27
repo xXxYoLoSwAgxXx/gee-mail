@@ -6,7 +6,6 @@
 
     <script>
       window.onload = function(){
-
       	window.geemails.map(function(currentValue, index){
       		var msg = $(
       			`<div class='jon'>
@@ -20,6 +19,10 @@
       	});
 				
 				setInterval(() => {
+					$( ".jon" ).click(function() {
+					console.log($( ".jon" ))
+					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
+				});
 					$("#inboxCount")[0].innerText = $(".jon").length + 1;
 					$('.mail').append(
 						`<div class='jon'>
@@ -29,14 +32,9 @@
 	      			<div id="body" class="hidden">${window.getNewMessage.body}</div>
       			</div>
 						<br>`);
-
-				}, 5000);
-
+				}, 3000);
 		$("#inboxCount")[0].innerText = $(".jon").length;
-				$( ".jon" ).click(function() {
-					console.log($( ".jon" ))
-					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
-				});
+				
       };
     </script>
 	</head>
