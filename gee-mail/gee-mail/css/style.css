@@ -1,0 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Arimo|Roboto);
+
+html {
+	background-color:#B5FFE1;
+}
+.mail{
+	width: 500px;
+	background-color: #84DD63;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 75px;
+	display: block;
+	border-radius: 15px;
+
+}
+
+#main{
+	border-color: black;
+	border-width: 2px;
+	background-color: #00241B;
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 75px;
+	border-radius: 15px;
+
+}
+
+#date{
+	margin-top: 15px;
+	text-align: center;
+	width: 50px;
+	display: inline;
+	font-family:"arimo";
+}
+
+#sender{
+	margin-left: 60px;
+	text-align: center;
+	width: 50px;
+	display: inline;
+	font-family:"arimo";
+}
+
+#subject{
+	margin-left: 70px;
+	text-align: center;
+	width: 50px;
+	display: inline;
+	font-family:"arimo";
+}
+
+.mailHead{
+	background-color: #84DD63;
+	width: 500px;
+	height: 50px;
+	border-radius: 15px;
+	font-family: "sans-serif";
+	font-size: 20px;
+	text-align: center;
+}
+
+#a {
+	border-bottom: 1px solid #262626;
+	height: 40px;
+	font-family:"Roboto";
+}
+#b {
+	border-bottom: 1px solid #262626;
+	height: 40px;
+	font-family:"Roboto";
+}
+#c {
+	border-bottom: 1px solid #262626;
+	height: 40px;
+	font-family:"Roboto";
+}
+#d {
+	border-bottom: 1px solid #262626;
+	height: 40px;
+	font-family:"Roboto";
+}
+#e {
+	border-bottom: 1px solid #262626;
+	height: 40px;
+	font-family:"Roboto";
+}
+
+
+h1{
+	background-color: #84DD63;
+	text-align: center;
+	border-radius: 15px;
+	font-family: sans-serif;
+	font-size: 	50px;
+}
+
+.newMail{
+	text-align: center;
+	background-color: #DC143C;
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	border-radius: 15px;
+}
+
+#gen{
+	background-color: green;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}

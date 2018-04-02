@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/style.css" rel="stylesheet" media="screen">
+
+    <script>
+      window.onload = function(){
+      	window.geemails.map(function(currentValue, index){
+      		var msg = $(
+      			`<div class='jon'>
+	      			<div id="date">${currentValue.date}</div>
+	      			<div id="sender">${currentValue.sender}</div>
+	      			<div id="subject">${currentValue.subject}</div>
+	      			<div id="body" class="hidden">${currentValue.body}</div>
+      			</div>
+						<br>`);
+      		$('.mail').append(msg);
+      	});
+				
+				setInterval(() => {
+					$( ".jon" ).click(function() {
+					console.log($( ".jon" ))
+					this.lastElementChild.className === "hidden" ? this.lastElementChild.className = "visible" : this.lastElementChild.className = "hidden";
+				});
+					$("#inboxCount")[0].innerText = $(".jon").length + 1;
+					$('.mail').append(
+						`<div class='jon'>
+	      			<div id="date">${window.getNewMessage().date}</div>
+	      			<div id="sender">${window.getNewMessage().sender}</div>
+	      			<div id="subject">${window.getNewMessage().subject}</div>
+	      			<div id="body" class="hidden">${window.getNewMessage().body}</div>
+      			</div>
+						<br>`);
+				}, 3000);
+		$("#inboxCount")[0].innerText = $(".jon").length;
+				
+      };
+    </script>
+	</head>
+	<body>
+		<div class="container" id="main">
+			<h1>
+				GEE-MAIL
+			</h1>
+			<div class = "wrap">
+			<div class = "mail">
+				<div class = "mailHead">
+					INBOX <span id="inboxCount"></span>
+				</div>
+			</div>
+						</div>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/mail-generator.js"></script>
+	<script src="js/app.js"></script>
+</html>
